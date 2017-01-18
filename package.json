@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --port 3000",
+    "dev": "nodemon server.js --exec babel-node",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jean Claudette Ambait",
@@ -12,6 +13,7 @@
   "dependencies": {
     "axios": "^0.15.3",
     "babel-core": "^6.18.2",
+    "cors": "^2.8.1",
     "express": "^4.14.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
