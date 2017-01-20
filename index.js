@@ -34,7 +34,17 @@ class App extends Component {
 }
 
 
+const Logout = () => {
+  return (
+    <div>
+      <form name="logout" action="/logout">
+        <button >logout!</button>
+      </form>
+    </div>
+  );
+};
+
 render(
-  <App />,
+  <Logout />,
   document.getElementById( 'app' ),
 );
