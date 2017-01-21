@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { get } from 'axios';
+import $ from 'jquery';
 
 class App extends Component {
 
@@ -16,9 +17,19 @@ class App extends Component {
       responseType: 'text',
     } )
     .then( ( response ) => {
-      console.log( 'this is response:', response.data );
+      const html = response.data;
+      console.log( 'this is response:', html );
+
+      $( html ).each( ( index, data ) => {
+        // HOW TO SCRAPE?
+        console.log( 'loaded!!!' );
+        if ( data.className === 'content' ) {
+          console.log( data, '<<<<<<' );
+        }
+      } );
+
       this.setState( {
-        content: response.data,
+        content: html,
       } );
     } );
   }
@@ -45,6 +56,9 @@ const Logout = () => {
 };
 
 render(
-  <Logout />,
+  <div>
+    <App />
+    <Logout />
+  </div>,
   document.getElementById( 'app' ),
 );
