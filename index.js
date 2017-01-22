@@ -20,16 +20,10 @@ class App extends Component {
       const html = response.data;
       console.log( 'this is response:', html );
 
-      $( html ).each( ( index, data ) => {
-        // HOW TO SCRAPE?
-        console.log( 'loaded!!!' );
-        if ( data.className === 'content' ) {
-          console.log( data, '<<<<<<' );
-        }
-      } );
+      const content = $( html ).find( 'div.content' ).html();
 
       this.setState( {
-        content: html,
+        content,
       } );
     } );
   }
