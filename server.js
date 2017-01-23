@@ -23,7 +23,7 @@ app.get( '/*', ( req, res ) => {
   res.sendFile( path.join( __dirname, 'index.html' ) );
 } );
 
-app.get( '/logout', ( req, res ) => {
+app.post( '/logout', ( req, res ) => {
   console.log( 'i am here!', req, res );
   res.send( {
     message: 'Logged out!',

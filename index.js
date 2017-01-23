@@ -42,17 +42,54 @@ class App extends Component {
 const Logout = () => {
   return (
     <div>
-      <form name="logout" action="/logout">
-        <button >logout!</button>
+      <form
+        action="/logout"
+        method="POST"
+        name="ns-logout-form"
+        onSubmit={( e ) => {
+          console.log( 'logout clicked!' );
+        }}
+      >
+        <input
+          type="submit"
+          value="logout!"
+        />
       </form>
     </div>
   );
 };
 
+class Main extends Component {
+  constructor( props ) {
+    super( props );
+
+    this.state = {
+      showLogout: false,
+    };
+  }
+
+  render() {
+    const node = ( this.state.showLogout ) ? <Logout /> : null;
+
+    return (
+      <div>
+        <button
+          onClick={() => {
+            this.setState( {
+              showLogout: !this.state.showLogout,
+            } );
+          }}
+        >Show logout button!</button>
+        {node}
+      </div>
+    );
+  }
+}
+
+
 render(
   <div>
-    <App />
-    <Logout />
+    <Main />
   </div>,
   document.getElementById( 'app' ),
 );
