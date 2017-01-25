@@ -3,7 +3,8 @@ import {
   SHOW_MODAL,
 } from './action';
 
-const reducer = ( state = {}, action ) => {
+const modal = ( state = {}, action ) => {
+  console.log( 'in here?', action );
   switch ( action.type ) {
     case HIDE_MODAL:
       return Object.assign(
@@ -32,4 +33,4 @@ const reducer = ( state = {}, action ) => {
   }
 };
 
-export default reducer;
+export default modal;

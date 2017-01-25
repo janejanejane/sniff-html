@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import MainPage from './MainPage';
 import { toggleModal } from './action';
 
-const mapStateToProps = ( dispatch ) => {
+const mapDispatchToProps = ( dispatch ) => {
   return {
     toggleModal: () => {
       dispatch( toggleModal() );
@@ -11,7 +11,8 @@ const mapStateToProps = ( dispatch ) => {
   };
 };
 
-const mapDispatchToProps = ( state ) => {
+const mapStateToProps = ( state ) => {
+  console.log( 'state?', state );
   return {
     modalExpand: state.modal.open,
     modalContent: state.modal.content,

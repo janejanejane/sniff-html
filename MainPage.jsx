@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import Logout from './Logout';
 import { toggleModal } from './action';
@@ -12,25 +12,33 @@ class MainPage extends Component {
     };
   }
 
-  render() {
-    const node = ( this.state.showLogout )
-      ? toggleModal( true, <Logout /> )
-      : toggleModal( false, null );
+  handleClick() {
+    console.log( 'here!' );
+    this.setState( {
+      showLogout: true,
+    } );
 
+    if ( this.state.showLogout ) {
+      toggleModal( true, <Logout /> );
+    } else {
+      toggleModal( false, null );
+    }
+  }
+
+  render() {
     return (
       <div>
         <button
-          onClick={() => {
-            this.setState( {
-              showLogout: !this.state.showLogout,
-            } );
-          }}
+          onClick={() => { this.handleClick(); }}
         >Show logout button!</button>
-        {node}
+        {this.props.modalContent}
       </div>
     );
   }
 }
 
+MainPage.propTypes = {
+  modalContent: PropTypes.node,
+};
 
 export default MainPage;
