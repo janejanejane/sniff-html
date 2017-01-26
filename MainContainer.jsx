@@ -5,8 +5,8 @@ import { toggleModal } from './action';
 
 const mapDispatchToProps = ( dispatch ) => {
   return {
-    toggleModal: () => {
-      dispatch( toggleModal() );
+    toggleModal: ( status, content ) => {
+      dispatch( toggleModal( status, content ) );
     },
   };
 };
