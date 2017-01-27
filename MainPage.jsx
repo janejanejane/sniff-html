@@ -1,32 +1,21 @@
 import React, { Component, PropTypes } from 'react';
 
 import Logout from './Logout';
-import { toggleModal } from './action';
 
 class MainPage extends Component {
   constructor( props ) {
     super( props );
-
-    this.state = {
-      showLogout: false,
-    };
+    this.handleClick = this.handleClick.bind( this );
   }
 
   handleClick() {
     console.log( 'here!' );
-    this.setState( {
-      showLogout: true,
-    } );
 
-    if ( this.state.showLogout ) {
-      toggleModal( true, <Logout /> );
-    } else {
-      toggleModal( false, null );
-    }
+    this.props.toggleModal( true, <Logout /> );
   }
 
   render() {
-    console.log( this.props );
+    console.log( 'props:', this.props );
     return (
       <div>
         <button
@@ -40,6 +29,7 @@ class MainPage extends Component {
 
 MainPage.propTypes = {
   modalContent: PropTypes.node,
+  toggleModal: PropTypes.func,
 };
 
 export default MainPage;

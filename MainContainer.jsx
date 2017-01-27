@@ -6,6 +6,7 @@ import { toggleModal } from './action';
 const mapDispatchToProps = ( dispatch ) => {
   return {
     toggleModal: ( status, content ) => {
+      console.log( 'in dispatch?' );
       dispatch( toggleModal( status, content ) );
     },
   };

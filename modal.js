@@ -11,10 +11,8 @@ const modal = ( state = {}, action ) => {
         {},
         state,
         {
-          modal: {
-            open: false,
-            content: action.content,
-          },
+          open: false,
+          content: action.content,
         },
       );
     case SHOW_MODAL:
@@ -22,10 +20,8 @@ const modal = ( state = {}, action ) => {
         {},
         state,
         {
-          modal: {
-            open: false,
-            content: action.content,
-          },
+          open: true,
+          content: action.content,
         },
       );
     default:
