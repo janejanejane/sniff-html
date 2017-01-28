@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-import { toggleModal } from './action';
-
-const Logout = () => {
+const Logout = ( { toggleModal } ) => {
   return (
     <div>
       <form
@@ -26,6 +24,10 @@ const Logout = () => {
       >close</div>
     </div>
   );
+};
+
+Logout.propTypes = {
+  toggleModal: PropTypes.func,
 };
 
 export default Logout;
