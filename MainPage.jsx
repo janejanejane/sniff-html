@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
+import App from './App';
 import Logout from './Logout';
 
 class MainPage extends Component {
@@ -18,6 +19,7 @@ class MainPage extends Component {
     console.log( 'props:', this.props );
     return (
       <div>
+        <App />
         <button
           onClick={() => { this.handleClick(); }}
         >Show logout button!</button>
