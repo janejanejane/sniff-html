@@ -17,8 +17,6 @@ class App extends Component {
     } )
     .then( ( response ) => {
       const html = response.data;
-      console.log( 'this is response:', html );
-
       const content = $( html ).find( 'div.content' ).html();
 
       this.setState( {

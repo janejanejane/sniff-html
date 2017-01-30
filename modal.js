@@ -4,7 +4,6 @@ import {
 } from './action';
 
 const modal = ( state = {}, action ) => {
-  console.log( 'in here?', action );
   switch ( action.type ) {
     case HIDE_MODAL:
       return Object.assign(

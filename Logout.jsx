@@ -8,7 +8,6 @@ const Logout = ( { toggleModal } ) => {
         method="POST"
         name="ns-logout-form"
         onSubmit={( e ) => {
-          console.log( 'logout clicked!' );
           document.forms[e.target.name].submit();
         }}
       >

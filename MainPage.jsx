@@ -10,13 +10,10 @@ class MainPage extends Component {
   }
 
   handleClick() {
-    console.log( 'here!' );
-
     this.props.toggleModal( true, <Logout toggleModal={this.props.toggleModal} /> );
   }
 
   render() {
-    console.log( 'props:', this.props );
     return (
       <div>
         <App />

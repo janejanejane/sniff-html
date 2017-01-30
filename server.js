@@ -24,7 +24,6 @@ app.get( '/*', ( req, res ) => {
 } );
 
 app.post( '/logout', ( req, res ) => {
-  console.log( 'i am here!', req, res );
   res.send( {
     message: 'Logged out!',
   } );

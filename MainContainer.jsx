@@ -6,14 +6,12 @@ import { toggleModal } from './action';
 const mapDispatchToProps = ( dispatch ) => {
   return {
     toggleModal: ( status, content ) => {
-      console.log( 'in dispatch?' );
       dispatch( toggleModal( status, content ) );
     },
   };
 };
 
 const mapStateToProps = ( state ) => {
-  console.log( 'state?', state );
   return {
     modalExpand: state.modal.open,
     modalContent: state.modal.content,
