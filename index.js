@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
+import { Route, Router, browserHistory } from 'react-router';
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
 
@@ -28,7 +29,9 @@ const store = createStore(
 
 render(
   <Provider store={store}>
-    <MainContainer />
+    <Router history={browserHistory}>
+      <Route path="/" component={MainContainer} />
+    </Router>
   </Provider>,
   document.getElementById( 'app' ),
 );
