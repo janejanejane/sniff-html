@@ -5,6 +5,7 @@ import { Route, Router, browserHistory } from 'react-router';
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
 
+import DashboardContainer from './DashboardContainer';
 import MainContainer from './MainContainer';
 import modal from './modal';
 
@@ -31,6 +32,7 @@ render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={MainContainer} />
+      <Route path="dashboard" component={DashboardContainer} />
     </Router>
   </Provider>,
   document.getElementById( 'app' ),
