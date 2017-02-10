@@ -1,15 +1,7 @@
 import { connect } from 'react-redux';
 
 import MainPage from './MainPage';
-import { toggleModal } from './action';
-
-const mapDispatchToProps = ( dispatch ) => {
-  return {
-    toggleModal: ( status, content ) => {
-      dispatch( toggleModal( status, content ) );
-    },
-  };
-};
+import * as actions from './action';
 
 const mapStateToProps = ( state ) => {
   return {
@@ -18,4 +10,7 @@ const mapStateToProps = ( state ) => {
   };
 };
 
-export default connect( mapStateToProps, mapDispatchToProps )( MainPage );
+export default connect(
+  mapStateToProps,
+  actions,
+)( MainPage );
