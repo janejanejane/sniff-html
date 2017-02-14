@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    get( 'https://www.nzpost.co.nz/about-us/who-we-are/terms-of-business/standard-terms-products-services/public-contract', {
+    get( '/content', {
       responseType: 'text',
     } )
     .then( ( response ) => {
