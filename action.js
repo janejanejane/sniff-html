@@ -1,4 +1,4 @@
-import * as api from '../api';
+import * as api from './api';
 
 export const FETCH_CONTENT = 'FETCH_CONTENT';
 export const HIDE_MODAL = 'HIDE_MODAL';
@@ -13,9 +13,10 @@ export const toggleModal = ( status, content ) => {
 
 export const fetchContent = () => {
   return api.fetchContent().then( ( response ) => {
+    console.log( response );
     return {
       type: FETCH_CONTENT,
-      content: response.data,
+      content: response,
     };
   } );
 };

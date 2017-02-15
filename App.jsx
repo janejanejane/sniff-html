@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { get } from 'axios';
-import $ from 'jquery';
+import { fetchContent } from './action';
 
 class App extends Component {
 
@@ -12,15 +11,12 @@ class App extends Component {
   }
 
   componentWillMount() {
-    get( '/content', {
-      responseType: 'text',
-    } )
+    fetchContent()
     .then( ( response ) => {
-      const html = response.data;
-      const content = $( html ).find( 'div.content' ).html();
+      const html = response;
 
       this.setState( {
-        content,
+        html,
       } );
     } );
   }
