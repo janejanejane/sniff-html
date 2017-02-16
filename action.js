@@ -13,7 +13,6 @@ export const toggleModal = ( status, content ) => {
 
 export const fetchContent = () => {
   return api.fetchContent().then( ( response ) => {
-    console.log( response );
     return {
       type: FETCH_CONTENT,
       content: response,

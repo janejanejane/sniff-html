@@ -13,10 +13,10 @@ class App extends Component {
   componentWillMount() {
     fetchContent()
     .then( ( response ) => {
-      const html = response;
+      const html = response.content;
 
       this.setState( {
-        html,
+        content: html,
       } );
     } );
   }
