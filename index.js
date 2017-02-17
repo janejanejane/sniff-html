@@ -8,6 +8,7 @@ import thunk from 'redux-thunk';
 
 import DashboardContainer from './DashboardContainer';
 import MainContainer from './MainContainer';
+import RestrictedPagesContainer from './RestrictedPagesContainer';
 import modal from './modal';
 
 const reducer = combineReducers( { modal } );
@@ -27,7 +28,9 @@ render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={MainContainer} />
-      <Route path="dashboard" component={DashboardContainer} />
+      <Route component={RestrictedPagesContainer}>
+        <Route path="dashboard" component={DashboardContainer} />
+      </Route>
     </Router>
   </Provider>,
   document.getElementById( 'app' ),
