@@ -9,8 +9,7 @@ const auth = ( state = {}, action ) => {
         {},
         state,
         {
-          open: false,
-          content: action.content,
+          isLoggedIn: action.isLoggedIn,
         },
       );
     default:

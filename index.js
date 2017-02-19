@@ -9,9 +9,10 @@ import thunk from 'redux-thunk';
 import DashboardContainer from './DashboardContainer';
 import MainContainer from './MainContainer';
 import RestrictedPagesContainer from './RestrictedPagesContainer';
+import auth from './reducer/auth';
 import modal from './modal';
 
-const reducer = combineReducers( { modal } );
+const reducer = combineReducers( { auth, modal } );
 
 const middlewares = [thunk];
 

@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { Component } from 'react';
+import { connect, setRedirectUrl } from 'react-redux';
 
 class RestrictedPagesContainer extends Component {
   componentDidMount() {
-    const { dispatch, currentUrl } = this.props;
+    const { dispatch, currentUrl, isLoggedIn } = this.props;
 
     if ( !isLoggedIn ) {
       dispatch( setRedirectUrl( currentUrl ) );
@@ -12,7 +12,7 @@ class RestrictedPagesContainer extends Component {
   }
 
   render() {
-    if ( isLoggedIn ) {
+    if ( this.props.isLoggedIn ) {
       return this.props.children;
     } else {
       return null;
@@ -21,6 +21,7 @@ class RestrictedPagesContainer extends Component {
 }
 
 function mapStateToProps( state, ownProps ) {
+  console.log( state );
   return {
     isLoggedIn: state.loggedIn,
     currentUrl: ownProps.location.pathname,
