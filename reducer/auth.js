@@ -1,5 +1,6 @@
 import {
   LOGGED_IN,
+  SET_REDIRECT_URL,
 } from '../action/auth';
 
 const auth = ( state = {}, action ) => {
@@ -10,6 +11,14 @@ const auth = ( state = {}, action ) => {
         state,
         {
           isLoggedIn: action.isLoggedIn,
+        },
+      );
+    case SET_REDIRECT_URL:
+      return Object.assign(
+        {},
+        state,
+        {
+          currentUrl: action.currentUrl,
         },
       );
     default:

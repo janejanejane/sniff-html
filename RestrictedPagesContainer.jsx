@@ -1,12 +1,17 @@
 import { Component } from 'react';
-import { connect, setRedirectUrl } from 'react-redux';
+import { connect } from 'react-redux';
+import { browserHistory } from 'react-router';
+
+import * as action from './action/auth';
 
 class RestrictedPagesContainer extends Component {
   componentDidMount() {
-    const { dispatch, currentUrl, isLoggedIn } = this.props;
+    const { currentUrl, isLoggedIn, setRedirectUrl } = this.props;
+
+    console.log( this.props );
 
     if ( !isLoggedIn ) {
-      dispatch( setRedirectUrl( currentUrl ) );
+      setRedirectUrl( currentUrl );
       browserHistory.replace( '/login' );
     }
   }
@@ -28,4 +33,4 @@ function mapStateToProps( state, ownProps ) {
   };
 }
 
-export default connect( mapStateToProps )( RestrictedPagesContainer );
+export default connect( mapStateToProps, action )( RestrictedPagesContainer );

@@ -7,6 +7,7 @@ import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
 
 import DashboardContainer from './DashboardContainer';
+import LoginContainer from './LoginContainer';
 import MainContainer from './MainContainer';
 import RestrictedPagesContainer from './RestrictedPagesContainer';
 import auth from './reducer/auth';
@@ -29,6 +30,7 @@ render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={MainContainer} />
+      <Route path="login" component={LoginContainer} />
       <Route component={RestrictedPagesContainer}>
         <Route path="dashboard" component={DashboardContainer} />
       </Route>
