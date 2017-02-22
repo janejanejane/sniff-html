@@ -13,6 +13,7 @@ export const fetchContent = () => {
 };
 
 export const setRedirectUrl = ( currentUrl ) => {
+  console.log( __API__ );
   return ( dispatch ) => {
     return {
       type: SET_REDIRECT_URL,
