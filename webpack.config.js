@@ -9,6 +9,15 @@ module.exports = {
       'babel-polyfill',
       './index.js',
     ],
+    'vendor': [
+      'react',
+      'react-dom',
+      'react-redux',
+      'react-router',
+      'react-router-redux',
+      'redux',
+      'redux-thunk',
+    ],
   },
   output: {
     path: path.join( __dirname, 'dist' ),
