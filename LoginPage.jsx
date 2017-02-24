@@ -1,8 +1,11 @@
 import React from 'react';
 
-const LoginPage = () => {
+const LoginPage = ( { children } ) => {
   return (
-    <div>I am login!!!</div>
+    <div>
+      I am login!!!
+      {children}
+    </div>
   );
 };
 

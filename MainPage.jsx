@@ -14,19 +14,26 @@ class MainPage extends Component {
   }
 
   render() {
+    const {
+      children,
+      modalContent,
+    } = this.props;
+
     return (
       <div>
         <App />
         <button
           onClick={() => { this.handleClick(); }}
         >Show logout button!</button>
-        {this.props.modalContent}
+        {modalContent}
+        {children}
       </div>
     );
   }
 }
 
 MainPage.propTypes = {
+  children: PropTypes.node,
   modalContent: PropTypes.node,
   toggleModal: PropTypes.func,
 };

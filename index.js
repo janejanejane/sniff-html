@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { Route, Router, browserHistory } from 'react-router';
+import { IndexRoute, Route, Router, browserHistory } from 'react-router';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
@@ -29,10 +29,11 @@ const store = createStore(
 render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={MainContainer} />
-      <Route path="login" component={LoginContainer} />
-      <Route component={RestrictedPagesContainer}>
-        <Route path="dashboard" component={DashboardContainer} />
+      <Route path="/" component={MainContainer}>
+        <IndexRoute path="login" component={LoginContainer} />
+        <Route component={RestrictedPagesContainer}>
+          <Route path="dashboard" component={DashboardContainer} />
+        </Route>
       </Route>
     </Router>
   </Provider>,
