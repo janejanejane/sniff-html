@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
 import App from './App';
+import LoginPage from './LoginPage';
 import Logout from './Logout';
 
 class MainPage extends Component {
@@ -26,7 +27,7 @@ class MainPage extends Component {
           onClick={() => { this.handleClick(); }}
         >Show logout button!</button>
         {modalContent}
-        {children}
+        <LoginPage>{children}</LoginPage>
       </div>
     );
   }
